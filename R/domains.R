@@ -7,7 +7,7 @@ compare.geodomain <- function(x, y){
   n2 <- names(y$projection)
   ndif <- setdiff(n1,n2)
   if (length(ndif) > 0) return(FALSE)
-  if (!isTRUE(all.equal(x$projection, y$projection[n1]))) return(FALSE)
+  if (!isTRUE(all.equal(x$projection, y$projection[n1],tolerance=1e-6))) return(FALSE)
 
 ### now the main domain specifiers
 ### NOTE: clonlat OR SW-NE points may be known
